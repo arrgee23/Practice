@@ -35,13 +35,23 @@ public class SetOfStacks {
 			}
 		}
 	}
+	// i is 1 indexed
 	boolean customPop(int i){
 		if(i>s.size()){ // greater than the total no of stacks
 			return false;
 		}
 		else{
-			
+			if(i == s.size()) // the last stack
+				myPop();
+			else{ // one of the middle stacks
+				Stack temp = new Stack((s.size()-i)*MAXSIZE); // make space to store component over the designated stack
+				while(s.size() != i){
+					
+				}
+				return false;
+			}
 		}
+		return false;
 	}
 	boolean myPush(int n){
 		// if initially empty allocate a new stack to list

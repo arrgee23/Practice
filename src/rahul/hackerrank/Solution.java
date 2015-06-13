@@ -2,8 +2,6 @@ package rahul.hackerrank;
 
 import java.util.Scanner;
 
-import com.sun.javafx.collections.SortableList;
-
 
 public class Solution {
 
