@@ -1,11 +1,11 @@
-package rahul.ds.stack;
+/*package rahul.ds.stack;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/*
+
  * Creates a new stack whenever individual stack's size goes out of bound]
- * */
+ * 
 public class SetOfStacks {
 	ArrayList <Stack> s;
 	final int MAXSIZE = 3;
@@ -85,7 +85,7 @@ public class SetOfStacks {
 		Scanner in = new Scanner(System.in);
 		
 		int k = in.nextInt();
-		
+		in.close();
 		for(int i=1;i<k;i++){
 			s.myPush(i);
 		}
@@ -96,3 +96,4 @@ public class SetOfStacks {
 	}
 
 }
+*/

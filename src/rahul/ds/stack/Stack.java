@@ -34,6 +34,9 @@ public class Stack {
 		arr = new int[size];
 		top = -1;
 	}
+	public boolean isEmpty(){
+		return top == -1;
+	}
 	public boolean push(int n){
 		if(top == size-1)
 			return false;
