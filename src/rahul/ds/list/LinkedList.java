@@ -4,7 +4,15 @@ import java.util.Hashtable;
 
 public class LinkedList {
 	Node start;
-	
+	int length(){
+		Node cursor = start;
+		int count = 0;
+		while(cursor!=null){
+			cursor = cursor.getNext();
+			count++;
+		}
+		return count;
+	}
 	public LinkedList() {
 		this.setStart(null);
 	}
@@ -159,9 +167,16 @@ public class LinkedList {
 	}
 	
 	public static void main(String args[]){
-		int[] a = {1,2,3,4,5,6,7,8,9};
-		LinkedList l = new LinkedList(a);
+		//int[] a = {1,2,3,4,5,6,7,8,9};
+		//LinkedList l = new LinkedList(a);
 		
+		LinkedList[] l = new LinkedList[10];
+		for(int i=0;i<10;i++)
+			for(int j=0;j<i+1;j++)
+				l[i].prepend(i+j);
+		
+		for(int i=0;i<10;i++)
+			l[i].printList();
 		/* making loop
 		Node last = null;
 		Node cursor = l.getStart();
@@ -198,9 +213,9 @@ public class LinkedList {
 			carry = (aval+bval+carry)/10;
 			l3.append(sum);
 		}
-		l3.printList();*/
+		l3.printList();
 		Node s = l.detectLoop();
 		if(s != null)
-			System.out.println(s.getValue());
+			System.out.println(s.getValue());*/
 	}
 }
