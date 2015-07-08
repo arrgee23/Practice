@@ -1,7 +1,6 @@
 package rahul.ds.treeGraph;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Scanner;
@@ -19,6 +18,7 @@ public class Graph {
     }
 	
 	// creates a graph with v vertices
+	@SuppressWarnings("unchecked")
 	Graph(int v){
 		this.e = 0;
 		this.v = v;

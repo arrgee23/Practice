@@ -7,15 +7,15 @@ public class IsBalanced {
 	public static void main(String[] args) {
 		BinaryTree b = new BinaryTree();
 		
-		b.root = new Node(1);
-		b.root.right = new Node(2);
-		b.root.left = new Node(2);
+		b.root = new TreeNode(1);
+		b.root.right = new TreeNode(2);
+		b.root.left = new TreeNode(2);
 		System.out.println(isBalanced(b));
-		b.root.right = new Node(2);
+		b.root.right = new TreeNode(2);
 		System.out.println(isBalanced(b));
-		b.root.right.right = new Node(2);
+		b.root.right.right = new TreeNode(2);
 		System.out.println(isBalanced(b));
-		b.root.right.right.right = new Node(2);
+		b.root.right.right.right = new TreeNode(2);
 		System.out.println(isBalanced(b));
 	}
 }
