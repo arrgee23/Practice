@@ -1,6 +1,7 @@
 package rahul.ds.treeGraph;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Scanner;
@@ -8,7 +9,8 @@ import java.util.Scanner;
 // adjacency list representation
 public class Graph {
 	private final int v;
-	private LinkedList<Integer>[] adj;
+	private LinkedList<GraphNode>[] adj;
+	private ArrayList<GraphNode> vertices;
 	private int e;
 	
 	// validate vertex
@@ -22,9 +24,14 @@ public class Graph {
 	Graph(int v){
 		this.e = 0;
 		this.v = v;
+		
+		vertices = new ArrayList<GraphNode>();
+		
 		this.adj = new LinkedList[v];
 		for(int i=0;i<v;i++)
-			adj[i] = new LinkedList<Integer>();
+			adj[i] = new LinkedList<GraphNode>();
+		for(int i=0;i<v;i++)
+			vertices.add(new GraphNode(i));
 	}
 	Graph(Scanner s){
 		this(s.nextInt());
@@ -43,11 +50,11 @@ public class Graph {
 		validateVertex(v);
 		validateVertex(w);
 		e++;
-		adj[v].add(w);
-		adj[w].add(v);
+		adj[v].add(getVertex(w));
+		adj[w].add(getVertex(v));
 	}
 	
-	LinkedList<Integer> adj(int v) // adjacent vertices to v
+	LinkedList<GraphNode> adj(int v) // adjacent vertices to v
 	{
 		return adj[v];
 	}
@@ -63,16 +70,19 @@ public class Graph {
         s.append(v + " vertices, " + e + " edges " + NEWLINE);
         for (int v = 0; v < this.v; v++) {
             s.append(v + ": ");
-            ListIterator<Integer> it = adj[v].listIterator();
+            ListIterator<GraphNode> it = adj[v].listIterator();
             while(it.hasNext()){
-            	Integer w = (Integer)it.next();
-            	s.append(w + " ");
+            	GraphNode w = (GraphNode)it.next();
+            	s.append(w.value + " ");
             }
             s.append(NEWLINE);
         }
         return s.toString();
     }
 	
+	public GraphNode getVertex(int i){
+		return vertices.get(i);
+	}
 	public static void main(String[] args) {
 		//In in = new In(args[0]);
 		//Graph g = new Graph(in);
