@@ -12,7 +12,7 @@ public class MatrixArrayWriter extends Thread{
 	public void run(){
 		// adds ith col to elements of array after index
 		for(int i=0;i<Matrix.COL;i++){
-			this.index = Matrix.addColToArray(i,this.arr,this.index);
+			MatrixArrayWriter.index = Matrix.addColToArray(i,MatrixArrayWriter.arr,MatrixArrayWriter.index);
 		}
 	}
 	public static void main(String[] args) {

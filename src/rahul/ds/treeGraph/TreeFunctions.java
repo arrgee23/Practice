@@ -1,20 +1,30 @@
 package rahul.ds.treeGraph;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class TreeFunctions {
 	
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
-		int[] a = {50,25,30,75,12,90,100,1};
+		
+		int[] a = {7,3,10,4,3};
 		tree.makeBST(a);
 		
-		TreeNode t = firstCommonAncestor(tree.root,tree.root.left.left,tree.root.left.left);
-		System.out.println(t.value);
+		//TreeNode t = firstCommonAncestor(tree.root,tree.root.left.left,tree.root.left.left);
+		//System.out.println(t.value);
+		makeLinkedListsOfEveryLevel(tree);
+		Stack<Integer> s = new Stack<Integer>();
+		//pathSum(tree.root,21,s);
+		printAllPathSum(tree.root, 10, 0, s);
 	}
-
+	/**
+	 * Makes every level of the tree a new linkedList
+	 * @param tree
+	 */
 	private static void makeLinkedListsOfEveryLevel(BinaryTree tree) {
 		Queue <TreeNode> q = new LinkedList<TreeNode>(); // queue to store
 		TreeNode dummy = new TreeNode(); // make a dummy treeNode to mark the end of a level in queue
@@ -71,6 +81,7 @@ public class TreeFunctions {
 	 * necessarily a binary search tree
 	 */
 	 // first common ancestor is the node from where u can access both nodes. and it is furtehest away from root
+
 	static TreeNode firstCommonAncestor(TreeNode root,TreeNode a,TreeNode b){
 		// start from root and find the node
 		int leftCount = countAppearence(root.left,a,b); // returns how many of a and b appears in thr subtree
@@ -106,5 +117,68 @@ public class TreeFunctions {
 			return countAppearence(root.left, a, b)+countAppearence(root.right, a, b)+addFactor;
 		}
 		
+	}
+	
+	/**
+	 * Print all root to leaf path whose sum equals sum
+	 * @param root the current node (root when calling)
+	 * @param sum = the sum
+	 * @param s = the stack to store the values
+	 */
+	static void pathSum(TreeNode root,int sum, Stack<Integer> s){
+		if(root == null)
+			return;
+		else{
+			sum = sum-root.value;
+			s.push(root.value); // push the item
+			
+			if(root.left==null && root.right==null && sum==0){ // got to the last point and the sum matches
+				Iterator<Integer> it = s.iterator();
+				while(it.hasNext()){
+					System.out.print(it.next()+" ");
+				}
+				System.out.println("");
+			}
+			else{ // its a valid node
+					pathSum(root.left, sum, s);
+					pathSum(root.right, sum, s);
+				}
+			s.pop(); // pop the item back backtrack
+		}
+	}	
+
+	
+	/*
+	 * print all paths which sum up to that value. 
+	 * Note that it can be any path in the tree-it does not have to start at the root.
+	 */
+	static void printAllPathSum(TreeNode root,int sum,int level,Stack<Integer> s){
+		if(root==null)
+			return;
+		else{
+			s.push(root.value); // push the value
+			// check backwards 
+			int temp=sum;
+			for(int i=level;i>=0;i--){
+				temp -= s.get(i);
+				if(temp==0)
+					printTllNow(s,i,level);
+			}
+			printAllPathSum(root.left,sum,level+1,s);
+			printAllPathSum(root.right,sum,level+1,s);
+			s.pop(); // return to the original state
+		}
+	}
+	/**
+	 * Helper function for printing stack at allpath sum
+	 * @param s
+	 * @param i
+	 * @param level
+	 */
+	private static void printTllNow(Stack<Integer> s, int i, int level) {
+		System.out.print("at level"+level+" ");
+		for(int j=i;j<=level;j++)
+			System.out.print(s.get(j)+" ");
+		System.out.println("");
 	}
 }
