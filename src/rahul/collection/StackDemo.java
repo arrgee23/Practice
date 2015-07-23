@@ -18,6 +18,10 @@ public class StackDemo {
 		Iterator<Integer> it = s.iterator();
 		while(it.hasNext())
 			System.out.println(it.next());
+		
+		while(!s.isEmpty())
+			System.out.println(s.pop());
+		
 		System.out.print(s.size());
  	}
 

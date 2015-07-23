@@ -26,5 +26,6 @@ class Arraylist{
 		while(it.hasNext()){
 			System.out.println(it.next());
 		}
+		a.remove(0);
 	}
 }

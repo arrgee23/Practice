@@ -12,6 +12,8 @@ public class Hashmap {
 		HashMap<String,Integer> h = new HashMap<String,Integer>();
 		
 		h.put("one",1);
+		h.get("one");
+		//h.remove("one");
 		
 		Set<Entry<String, Integer>> set = h.entrySet();
 		Iterator<Entry<String, Integer>> it = set.iterator();
