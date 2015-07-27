@@ -8,7 +8,7 @@ public class AllSorts {
 		
 		for (int i = 0; i < a.length; i++) {
 			// bubble ith element forward
-			boolean atLeastOneSwap = true;
+			boolean atLeastOneSwap = false;
 			
 			for (int j = 0; j < a.length-i-1; j++) {
 				if(a[j]>a[j+1]){ // not in proper position
@@ -26,11 +26,11 @@ public class AllSorts {
 		}
 	}
 
-	// select the minimum element at each iteration and exchenge it with the 
+	// select the minimum element at each iteration and exchange it with the 
 	// proper indexed element
 	public static void selectionSort(int[] a){
 		
-		for(int i = 0; i < a.length; i++){
+		for(int i = 0; i < a.length-1; i++){
 			int min = a[i];
 			int minIndex = i;
 			
@@ -133,7 +133,8 @@ public class AllSorts {
 	public static void main(String[] args) {
 		int arr[] = {12,1,6,98,-4,98};
 		
-		quickSort(arr, 0, arr.length-1);
+		//quickSort(arr, 0, arr.length-1);
+		selectionSort(arr);
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i]+" ");
 		}System.out.println();

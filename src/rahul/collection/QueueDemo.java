@@ -12,9 +12,15 @@ public class QueueDemo {
 		for(int i=0;i<10;i++)
 			l.add("foo");
 		
+		for(String item: l)
+			System.out.print(item);
 		System.out.print(l);
-		for(int i=0;i<l.size();i++)
+		
+		for(int i=0;i<l.size();i++){
+			System.out.println(l.size());
 			System.out.print(l.poll());
+		
+		}
 		
 		Iterator <String> it = l.iterator();
 		while(it.hasNext())
