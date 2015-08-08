@@ -1,6 +1,4 @@
-rahul
-is 
-a 
-good guy 3 4 nala
-1 
-ad
+2015-04-01 08:21:25 StandardWrapper[/admin:invoker]: error in Loading container servlet invoker 
+2015-04-02 01:46:09 WebappLoader[/admin]: in deploy JAR /WEB-INF/lib/struts.jar to F:\Apache\Tomcat 4.1\webapps\..\server\webapps\admin\WEB-INF\lib\struts.jar1 
+2015-04-03 01:46:09 WebappLoader[/admin]: error in deploy JAR /WEB-INF/lib/struts.jar to F:\Apache\Tomcat 4.1\webapps\..\server\webapps\admin\WEB-INF\lib\struts.jar2 
+2015-04-03 01:46:09 WebappLoader[/admin]: error in deploy JAR /WEB-INF/lib/struts.jar to F:\Apache\Tomcat 4.1\webapps\..\server\webapps\admin\WEB-INF\lib\struts.jar2 

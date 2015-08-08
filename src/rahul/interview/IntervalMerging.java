@@ -71,6 +71,7 @@ public class IntervalMerging {
 			return null;
 		else{
 			Stack<Point> s = new Stack<Point>();
+			//Iterator it = s.iterator();
 			s.push(points[0]);
 			for (int i = 1; i < points.length; i++) {
 				if(points[i].start <= s.peek().end){

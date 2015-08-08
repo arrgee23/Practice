@@ -2,8 +2,8 @@ package rahul.interview;
 import java.util.*;
 
 public class Josephus {
-		static final int N=10;
-		static final int K=2;
+		static final int N=5;
+		static final int K=3;
 	
 	public static void main(String[] args) {
 		LinkedList<Integer> l = new LinkedList<Integer>();
