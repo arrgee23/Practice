@@ -27,6 +27,7 @@ public class Enum {
 	Suit suit;
 	int value;
 	SpecialSuit splSuit;
+	
 	Enum(String suit,int value){
 		if(suit.equals("hearts")){
 			this.suit = Suit.CLUBS;
