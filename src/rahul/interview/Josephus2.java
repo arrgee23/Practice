@@ -29,7 +29,8 @@ public class Josephus2{
         return l.get(0);
     }
    
- public static void main(String[] args) {
+ @SuppressWarnings("resource")
+public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         while(s.hasNext())
         System.out.println(s.next());

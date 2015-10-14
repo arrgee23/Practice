@@ -6,6 +6,7 @@ import java.util.Stack;
 
 public class HotelTrip {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		LinkedList<Integer> l = new LinkedList<Integer>();

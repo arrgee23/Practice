@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class NT1_MagicalShop {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		
 		long a=s.nextLong();
