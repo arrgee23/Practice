@@ -10,6 +10,7 @@ import java.util.InputMismatchException;
 
 public class Main {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		InputReader in 		= new InputReader(System.in);
 		//OutputWriter out	=	new OutputWriter(System.out);

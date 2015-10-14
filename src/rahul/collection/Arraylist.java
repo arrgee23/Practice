@@ -14,6 +14,7 @@ class Arraylist{
 			a.add(new String()+i);
 		}
 		
+		@SuppressWarnings("unchecked")
 		ArrayList <String> b = (ArrayList<String>) a.clone();
 		// print the entire arraylist
 		System.out.println(a);

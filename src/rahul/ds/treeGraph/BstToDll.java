@@ -37,6 +37,7 @@ public class BstToDll {
 		
 	}
 
+	@SuppressWarnings("unused")
 	private static TreeNode merge(TreeNode first, TreeNode second) {
 		if(first == null)
 			return second;

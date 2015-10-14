@@ -1,6 +1,7 @@
 package rahul.collection;
 
 public class StringBufferAndArray {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		String s = "rahul";
 		
