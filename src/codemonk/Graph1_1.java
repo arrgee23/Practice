@@ -1,4 +1,4 @@
-package CodeMonk;
+package codemonk;
 
 import java.util.Scanner;
 
