@@ -31,5 +31,7 @@ class Arraylist{
 			System.out.println(it.next());
 		}
 		a.remove(0);
+		System.out.println(a);
+		
 	}
 }

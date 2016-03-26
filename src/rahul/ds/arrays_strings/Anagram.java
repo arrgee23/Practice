@@ -32,6 +32,8 @@ public class Anagram {
 	
 	public static void main(String[] args){
 		System.out.print(isAnagram(" man", " god"));
+		String s = "zxdc";
+		
 	}
 
 }

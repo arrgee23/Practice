@@ -10,6 +10,7 @@ public class Linkedlist {
 		for(int i=0;i<10;i++)
 			l.add("foo");
 		// linked list normal traversal
+		
 	
 		System.out.print(l);
 		for(int i=0;i<l.size();i++)

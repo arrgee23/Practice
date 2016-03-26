@@ -27,7 +27,7 @@ class Pair implements Comparable<Pair>{
 public class WordCount {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		Scanner s = new Scanner(new File("input.txt"));
+		Scanner s = new Scanner(new File("input"));
 		
 		String words=new String("");
 		
@@ -36,13 +36,15 @@ public class WordCount {
 			
 		}
 		
-		words = words.replaceAll(",", " ");
-		//words = words.replaceAll(".", " ");
-		words = words.replaceAll("!", " ");
+		words = words.replace(",", " ");
+		words = words.replace(".", " ");
+		words = words.replace("!", " ");
+		
+		words = removeRedundantSpace(words);
 		
 		//TODO fix fullstop bug
 		
-		//System.out.println(words);
+		System.out.println(words);
 		
 		String[] list = words.split(" ");
 		
@@ -78,6 +80,24 @@ public class WordCount {
 		for(Pair p : arr){
 			System.out.println(p.s +" : "+p.count);
 		}
+	}
+
+	private static String removeRedundantSpace(String words) {
+		String s="";
+		int count = 0;
+		while(words.charAt(count) == ' ')
+			count++;
+		s+=words.charAt(count);
+		
+		for (int i = count+1; i < words.length(); i++) {
+			// if the last char in dummy string is space dont include other space
+			if(s.charAt(s.length()-1)==' '){
+				if(words.charAt(i) != ' ')
+					s+=words.charAt(i);
+			}else
+				s+=words.charAt(i);
+		}
+		return s;
 	}
 
 }
