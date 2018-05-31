@@ -8,12 +8,12 @@ package rahul.algo.searchsort;
  *
  */
 public class SortedMatrixSearch {
-	boolean FindElem(int[][] mat, int elem, int M, int N) {
+	static boolean FindElem(int[][] mat, int elem) {
 		
 		int row = 0;
-		int col = N - 1;
+		int col = mat[0].length- 1;
 		
-		while (row < M && col >= 0) {
+		while (row < mat.length && col >= 0) {
 			if (mat[row][col] == elem) {
 				return true;
 			} else if (mat[row][col] > elem) {
@@ -26,7 +26,14 @@ public class SortedMatrixSearch {
 	}
 
 	public static void main(String[] args) {
-
+		int[][] mat = { {10, 20, 30, 40},
+                {15, 25, 35, 45},
+                {27, 29, 37, 48},
+                {32, 33, 39, 50}};
+		
+		
+		
+		System.out.println(FindElem(mat,50));
 	}
 
 }
