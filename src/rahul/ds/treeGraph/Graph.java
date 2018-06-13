@@ -40,7 +40,7 @@ public class Graph {
 		for (int i = 0; i <E; i++) {
             int v = s.nextInt();;
             int w = s.nextInt();;
-            addEdge(v, w);
+            addDirEdge(v, w);
             //System.out.println("executing "+(i+1)+"th time");
         }	
 	}
@@ -52,6 +52,14 @@ public class Graph {
 		e++;
 		adj[v].add(getVertex(w));
 		adj[w].add(getVertex(v));
+	}
+	
+	void addDirEdge(int v,int w){
+		validateVertex(v);
+		validateVertex(w);
+		e++;
+		adj[v].add(getVertex(w));
+		//adj[w].add(getVertex(v));
 	}
 	
 	LinkedList<GraphNode> adj(int v) // adjacent vertices to v
